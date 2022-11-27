@@ -33,6 +33,11 @@ public class HelloRestController {
     @PostMapping("/post")
     public String sayHello(@RequestBody User user){
         return "Hello "+user.getFirstName()+" "+user.getLastName()+" from Bridgelabz";
+    }
 
+    //UC-5 ------------>
+    @PutMapping("/put/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam (value = "lastName") String lastName){
+        return "hello "+firstName +" "+lastName+" from Bridgelabz";
     }
 }
