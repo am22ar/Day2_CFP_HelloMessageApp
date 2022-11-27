@@ -1,5 +1,6 @@
 package com.day2.hellomsgapp.hellomessagingapp.controller;
 
+import com.day2.hellomsgapp.hellomessagingapp.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,5 +27,12 @@ public class HelloRestController {
     public String sayHelloParam(@PathVariable String name)
     {
         return "Hello Mr/Mrs "+name+" !!";
+    }
+
+    //UC-4 ------------>
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user){
+        return "Hello "+user.getFirstName()+" "+user.getLastName()+" from Bridgelabz";
+
     }
 }
